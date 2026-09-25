@@ -3,32 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Directorio de usuarios</title>
-        <link rel="stylesheet" href="css/styles.css">
+        <title>OnLine Shop</title>
+        <link rel="stylesheet" href="css/dashboardStyle.css">
     </head>
     <body>
         <header>
-            <h1>Directorio Web</h1>
+            <h1>Shop OnLine</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#usuarios">Usuarios</a></li>
-                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="index.html">Salir</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <section id="usuarios" class="usuarios">
-                <h2>Usuarios registrados</h2>
-                <label for="buscar">Buscar usuario</label>
+            <section id="productos" class="productos">
+                <label for="buscar">Filtro de búsqueda:</label>
                 <input id="buscar" type="search" placeholder="Escriba un nombre...">
-                <button id="limpiarBusqueda" type="button">Limpiar</button>
-                <p id="mensaje">Cargando usuarios...</p>
-                <div id="contenedorUsuarios" class="contenedor-usuarios"></div>
+                <button id="realizarBusqueda" type="button">Buscar</button>
+                
+                <h2>Productos</h2>
             </section>
         </main>
-        <footer><p>Programación Web</p></footer>
         <script src="js/app.js"></script>
     </body>
 </html>

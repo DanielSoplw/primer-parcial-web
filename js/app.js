@@ -1,23 +1,4 @@
-// Define la URL de la API para un solo elemento todo
-const apiUrl = "https://fakestoreapi.com/docs";
-
-// Realiza una solicitud GET utilizando la API fetch
-fetch(apiUrl)
-  .then((response) => {
-    // La función fetch devuelve una promesa.
-    // El primer bloque .then() recibe el objeto Response.
-    // Necesitamos llamar al método .json() en la respuesta para analizar el cuerpo del texto como JSON.
-    return response.json();
-  })
-  .then((data) => {
-    // El segundo bloque .then() recibe los datos JSON analizados.
-    console.log("Datos obtenidos exitosamente:");
-    console.log(data);
-  })
-  .catch((error) => {
-    // El bloque .catch() se ejecutará si ocurre algún error durante la operación fetch.
-    console.error("Error al obtener datos:", error);
-  });
+//Login
 
 document.addEventListener("DOMContentLoaded", function() {
     var loginForm = document.getElementById("loginForm");
@@ -37,3 +18,32 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+//Dashboard
+
+fetch("https://fakestoreapi.com/products")
+.then(response => response.json())
+.then(data => { console.log(data); console.log(data[0]); console.log(data[0].name);
+})
+.catch(error => console.error(error));
+
+fetch("https://fakestoreapi.com/products")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    // Muestra los datos del usuario obtenidos
+    userProfileElement.innerHTML = `
+      <h3>${data.category}</h3>
+      <img class="imagen" src=data.image/>
+      <p>${data.title}</p>
+      <p>${data.price}</p>
+      <button type="submit"> Add </button>
+    `;
+  })
+  .catch((error) => {
+    userProfileElement.textContent = "Failed to load user profile.";
+    console.error("Error:", error);
+  });
